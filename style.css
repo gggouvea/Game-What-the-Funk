@@ -66,3 +66,7 @@
 #play-btn img:hover {
     box-shadow: 1px 1px 4px 2px;
 }
+
+#multiple-choice-btns {
+    width: 400px;
+}
