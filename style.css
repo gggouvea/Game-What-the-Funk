@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.phone {
+    background-image: url(./images/Web/Phone-nobtn-greybackground.png);
+    background-size: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+    align-content: center;
+    
+    position: relative;
+}
+
+#difficulty-btns {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+    align-content: center;
+    height: 120px;
+    
+    position: absolute;
+    top: 360px;
+    right: 38px;
+}
+
+#difficulty-btns img {
+    width: 80px;
+    margin: 1px;
+    cursor: pointer;
+}
+
+#difficulty-btns img:hover {
+    box-shadow: 1px 1px 4px 2px;
+}
+
+#play-btn {
+    position: absolute;
+    bottom: 60px;
+}
+
+#play-btn > img {
+    width: 50px;
+    cursor: pointer;
+}
+
+#play-btn img:hover {
+    box-shadow: 1px 1px 4px 2px;
+}
