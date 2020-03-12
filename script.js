@@ -31,11 +31,13 @@ const musicDb = [
 
 
 // SELECT 4 RANDOM SONGS
-// let musicDbCopy = [...musicDb];
+let musicDbCopy = [...musicDb];
 
-// const musicToPlay = () => {
-//     let selected4 = [...musicDbCopy].sort(func => 0.5 - Math.random()).slice(0, 4);
-// }
+const musicToPlay = () => {
+    let selected4 = [...musicDbCopy].sort(func => 0.5 - Math.random()).slice(0, 3);
+    selected4.push(musicIndex);
+    return selected4;
+}
 
 
 // AUDIO SETTINGS
@@ -86,24 +88,28 @@ const playAudio = () => {
 const levelEasy = () => {
     difficulty = 'easy'
     console.log(difficulty)
+    div.innerHTML = '';
 }
 
 // Medium - Plays 5 seconds
 const levelMedium = () => {
     difficulty = 'medium'
     console.log(difficulty)
+    div.innerHTML = '';
 }
 
 // Hard - Plays 3 seconds
 const levelHard = () => {
     difficulty = 'hard'
     console.log(difficulty)
+    div.innerHTML = '';
 }
 
 // Extreme - Plays 1 second
 const levelExtreme = () => {
     difficulty = 'extreme'
     console.log(difficulty)
+    div.innerHTML = '';
 }
 
 
@@ -114,9 +120,10 @@ const multipleChoice = () => {
 
     [...divs].map(div => div.innerHTML = "");
 
-    musicDb.sort(func => 0.5 - Math.random());
-
-    musicDb.map((musicName, index) => {
+    let selected4 = [...musicDbCopy].sort(func => 0.5 - Math.random()).slice(0, 3);
+    selected4.push(musicDbCopy[musicIndex]);
+    selected4.sort(func => 0.5 - Math.random());
+    selected4.map((musicName, index) => {
         let div = document.querySelector(`.container:nth-child(${index+1}) div`);
         div.innerHTML = musicName.slice(13, -4);
     })
