@@ -26,7 +26,7 @@
                 </div>
     
                 <div id="play-btn">
-                    <img onclick="audioPlay()" src="./images/Web/Play-btn.png"></img>
+                    <img onclick="playAudio()" src="./images/Web/Play-btn.png"></img>
                 </div>
     
             </div>
@@ -36,28 +36,30 @@
                 <div id="multiple-choice-btns">
         
                     <label class="container">
-                        <input type="radio" checked="checked" name="radio">
+                        <input type="radio" id="r1" value="checkedMusic" name="radio">
                         <div></div>
                     </label>
                       
                     <label class="container">
-                        <input type="radio" name="radio">
+                        <input type="radio" id="r2" value="checkedMusic" name="radio">
                         <div></div>
                     </label>
                       
                     <label class="container">
-                        <input type="radio" name="radio">
+                        <input type="radio" id="r3" value="checkedMusic" name="radio">
                         <div></div>
                     </label>
                       
                     <label class="container">
-                        <input type="radio" name="radio">
+                        <input type="radio" id="r4" value="checkedMusic" name="radio">
                         <div></div>
                     </label>
         
                 </div>
+                
+                <button onclick="selectMusic()">Select Music</button>
     
-                <button onclick="">Select Music</button>
+                <div class="result"></div>
 
 
             </div>

@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+}
+
 .test {
     display: flex;
 	flex-direction: row;
@@ -68,5 +72,12 @@
 }
 
 #multiple-choice-btns {
-    width: 400px;
+    width: 200px;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
 }

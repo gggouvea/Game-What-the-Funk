@@ -13,62 +13,66 @@ extreme-btn click => select 1 seconds of audioplay;
 
 ) Play Random Song:
 Play Music => plays random music for (x)seconds;
-
-) Select Answer:
-When the music stops, user should select the correct answer in 10 seconds;
-
-) Game Rules:
-Correct answer => earns (x) points;
-Wrong answer => loses (x) points;
-3 wrong answers => GAME OVER;
 */
 
 
 
 // MUSIC DB
-const musicDB = [
+const musicDb = [
     './songs/Rock/Dire Straits - Sultans Of Swing.mp3',
     './songs/Rock/Pink Floyd - Another Brick In The Wall.mp3',
     './songs/Rock/Led Zeppelin - When The Levee Breaks.mp3',
     './songs/Rock/Rage Against The Machine - Killing In The Name.mp3',
-    // './songs/Rock/Eagles - Hotel California.mp3',
-    // './songs/Rock/Metallica - Wherever I May Roam.mp3',
-    // './songs/Rock/Steppenwolf - Born To Be Wild.mp3',
-    // './songs/Rock/The Doors - Break On Through.mp3'
+    './songs/Rock/Eagles - Hotel California.mp3',
+    './songs/Rock/Metallica - Wherever I May Roam.mp3',
+    './songs/Rock/Steppenwolf - Born To Be Wild.mp3',
+    './songs/Rock/The Doors - Break On Through.mp3'
 ]
 
 
+// SELECT 4 RANDOM SONGS
+// let musicDbCopy = [...musicDb];
+
+// const musicToPlay = () => {
+//     let selected4 = [...musicDbCopy].sort(func => 0.5 - Math.random()).slice(0, 4);
+// }
+
 
 // AUDIO SETTINGS
-let time = '';
+let difficulty = '';
+let audio;
+let name = '';
+const winMsg = document.createElement('h1');
+winMsg.classList.add("message");
 
-const audioPlay = () => {
-    passwordMusicIndex = Math.floor(Math.random() * musicDB.length);
-    let audio = new Audio(musicDB[passwordMusicIndex]);
+const playAudio = () => {  
+    winMsg.innerHTML = "";
+    musicIndex = Math.floor(Math.random() * musicDb.length);
+    name = musicDb[musicIndex].slice(13, -4);
+    audio = new Audio(musicDb[musicIndex]);
     audio.play();
-    if (time === 'easy') {
-        setTimeout(() => {
+    if (difficulty === 'easy') {
+        setTimeout(() => {      
             audio.pause();
             console.log('SetTimeout EASY');
             multipleChoice();
         }, 10000);
-    } else if (time === 'medium') {
+    } else if (difficulty === 'medium') {
         setTimeout(() => {
             audio.pause();
             console.log('SetTimeout MEDIUM');
             multipleChoice();
         }, 5000);
-    } else if (time === 'hard') {
+    } else if (difficulty === 'hard') {
         setTimeout(() => {
             audio.pause();
             console.log('SetTimeout HARD');
             multipleChoice();
         }, 3000);
-    } else if (time === 'extreme') {
+    } else if (difficulty === 'extreme') {
         setTimeout(() => {
             audio.pause();
             console.log('SetTimeout EXTREME');
-        
             multipleChoice();
         }, 1000);
     } else {
@@ -80,43 +84,66 @@ const audioPlay = () => {
 // GAME DIFFICULTY
 // Easy - Plays 10 seconds
 const levelEasy = () => {
-    time = 'easy'
-    console.log(time)
+    difficulty = 'easy'
+    console.log(difficulty)
 }
 
 // Medium - Plays 5 seconds
 const levelMedium = () => {
-    time = 'medium'
-    console.log(time)
+    difficulty = 'medium'
+    console.log(difficulty)
 }
 
 // Hard - Plays 3 seconds
 const levelHard = () => {
-    time = 'hard'
-    console.log(time)
+    difficulty = 'hard'
+    console.log(difficulty)
 }
 
 // Extreme - Plays 1 second
 const levelExtreme = () => {
-    time = 'extreme'
-    console.log(time)
+    difficulty = 'extreme'
+    console.log(difficulty)
 }
 
 
 // MULTIPLE CHOICE TEST
-// Secret Music
-
-
-
 // Random Music
 const multipleChoice = () => {
-   let divs = document.querySelectorAll(".container div");
-   [...divs].map(div => div.innerHTML = "");
-    musicDB.sort(func => 0.5 - Math.random());
-    musicDB.map((musicName, index) => {
+    let divs = document.querySelectorAll(".container div");
+
+    [...divs].map(div => div.innerHTML = "");
+
+    musicDb.sort(func => 0.5 - Math.random());
+
+    musicDb.map((musicName, index) => {
         let div = document.querySelector(`.container:nth-child(${index+1}) div`);
         div.innerHTML = musicName.slice(13, -4);
     })
+}
+
+
+// Secret Music
+const selectMusic = () => {
+    let inputs = document.querySelectorAll('input[name]');
+    inputs = [...inputs];
+    let options = document.querySelectorAll('input[name] + div');
+    options = [...options];
+    console.log(options, ' ', inputs)
+    let optionValue;
+    for (let i = 0; i < options.length; i += 1) {
+        console.log(inputs[i].checked)
+        if (inputs[i].checked && name === options[i].innerHTML) {
+            winMsg.textContent = 'CONGRATULATIONS!';
+            winMsg.style.border = "1px solid red"
+            
+            console.log(winMsg);
+            break;
+        } else {
+            winMsg.innerHTML = 'TRY AGAIN!'
+        }
+    }
+    document.body.appendChild(winMsg);
 }
 
 
