@@ -153,6 +153,6 @@ const selectMusic = () => {
             winMsg.style.backgroundColor = "red"
         }
     }
-    document.body.appendChild(winMsg);
+    document.getElementById('message').appendChild(winMsg);
     options.map((div) => div.innerHTML = '')
 }

@@ -181,11 +181,11 @@ span {
     margin-right: 10px;
 }
 
-.message {
+#message h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 1px;
+    margin-bottom: 0px;
 }
 
 #select-music-btn {
