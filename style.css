@@ -1,25 +1,96 @@
 * {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
-body {
-    display: flex;
-}
-
-.test {
+.all {
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	align-content: center;
+}
+
+.gameplay {
+    background: black;
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+}
+
+#difficulty-btns-left {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+    align-content: center;
+    position: relative;
+    height: 300px;
+}
+
+#difficulty-btns-left img {
+    width: 80px;
+    margin: 1px;
+    cursor: pointer;
+    display: flex;
+}
+
+#difficulty-btns-left img:hover {
+    box-shadow: 1px 1px 4px 2px;
+}
+
+#difficulty-btns-left p {
+    font-size: 15px;
+    color: white;
+    margin-top: 1px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+    height: 50px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    text-align: center;
+    height: 40px;
+    font-size: 30px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+span {
+    color: blue;
+    font-weight: bold;
 }
 
 .phone {
     background-image: url(./images/Web/Phone-nobtn-greybackground.png);
     background-size: 300px;
     width: 300px;
+    margin: 0px 50px;
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
@@ -29,11 +100,10 @@ body {
 	justify-content: flex-end;
 	align-items: center;
     align-content: center;
-    
     position: relative;
 }
 
-#difficulty-btns {
+#difficulty-btns-phone {
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -41,43 +111,77 @@ body {
 	align-items: center;
     align-content: center;
     height: 120px;
-    
     position: absolute;
     top: 360px;
     right: 38px;
 }
 
-#difficulty-btns img {
+#difficulty-btns-phone img {
     width: 80px;
     margin: 1px;
     cursor: pointer;
 }
 
-#difficulty-btns img:hover {
+#difficulty-btns-phone img:hover {
     box-shadow: 1px 1px 4px 2px;
 }
 
-#play-btn {
+#play-btn-phone {
     position: absolute;
-    bottom: 60px;
+    bottom: 70px;
 }
 
-#play-btn > img {
+#play-btn-phone > img {
     width: 50px;
     cursor: pointer;
 }
 
-#play-btn img:hover {
+#play-btn-phone img:hover {
     box-shadow: 1px 1px 4px 2px;
 }
 
+.multiple-choice {
+    width: 400px;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.multiple-choice h2 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+    height: 40px;
+    font-size: 30px;
+}
+
+
 #multiple-choice-btns {
-    width: 200px;
+    width: 400px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    vertical-align: center;
+    height: 80px;
+    border: 1px solid red;
+}
+
+input {
+    align-content: center;
 }
 
 .message {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: brown;
+    top: 1px;
+}
+
+#select-music-btn {
+    width: 400px;
 }

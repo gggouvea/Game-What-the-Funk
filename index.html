@@ -6,32 +6,66 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>What the Funk</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+
+        <div class="message"></div>
               
-        <div class="test">
+        <div class="all">
+
+            <div class="gameplay">
+
+                <div class="text-box">
+
+                    <h1>How to Play</h1>
+
+                    <h2>First select Difficulty</h2>
+
+                    <div id="difficulty-btns-left">
+                        
+                        <img onclick="levelEasy()" id="easy-btn" type="button" src="./images/Web/easy-btn.png"></img>
+                        <p>Plays 10 seconds</p>
+                        
+                        <img onclick="levelMedium()" id="medium-btn" src="./images/Web/medium-btn.png"></img>
+                        <p>Plays 5 seconds</p>
+                        
+                        <img onclick="levelHard()" id="hard-btn" src="./images/Web/hard-btn.png"></img>
+                        <p>Plays 3 seconds</p>
+                        
+                        <img onclick="levelExtreme()" id="extreme-btn" src="./images/Web/extreme-btn.png"></img>
+                        <p>Plays 1 second</p>
+                    </div>
+        
+                    <p>Press the <span>Play Button</span> </p>
+
+                </div>
+
+            </div>
 
             <div class="phone">
     
-                <div id="difficulty-btns">
-                    <img onclick="levelEasy()" id="easy-btn" type="button" src="images/Web/Easy-btn.png"></img>
+                <div id="difficulty-btns-phone">
+                    <img onclick="levelEasy()" id="easy-btn" type="button" src="./images/Web/easy-btn.png"></img>
                     
-                    <img onclick="levelMedium()" id="medium-btn" src="./images/Web/Medium-btn.png"></img>
+                    <img onclick="levelMedium()" id="medium-btn" src="./images/Web/medium-btn.png"></img>
                     
-                    <img onclick="levelHard()" id="hard-btn" src="./images/Web/Hard-btn.png"></img>
+                    <img onclick="levelHard()" id="hard-btn" src="./images/Web/hard-btn.png"></img>
                     
-                    <img onclick="levelExtreme()" id="extreme-btn" src="./images/Web/Extreme-btn.png"></img>
+                    <img onclick="levelExtreme()" id="extreme-btn" src="./images/Web/extreme-btn.png"></img>
                 </div>
     
-                <div id="play-btn">
-                    <img onclick="playAudio()" src="./images/Web/Play-btn.png"></img>
+                <div id="play-btn-phone">
+                    <img onclick="playAudio()" src="./images/Web/play-btn.png"></img>
                 </div>
     
             </div>
 
-            <div>
+            <div class="multiple-choice">
+
+                <h2>Select Correct Song</h2>
                 
                 <div id="multiple-choice-btns">
         
@@ -54,28 +88,14 @@
                         <input type="radio" id="r4" value="checkedMusic" name="radio">
                         <div></div>
                     </label>
-        
-                </div>
-                
-                <button onclick="selectMusic()">Select Music</button>
-    
-                <div class="result"></div>
 
+                    <button id="select-music-btn" class="btn btn-dark" onclick="selectMusic()">Submit</button>
+                    
+                </div>
 
             </div>
             
         </div>
-
-        
-
-
-
-
-
-
-
-
-
 
 
         <!-- Bootstrap JS -->

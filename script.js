@@ -2,9 +2,6 @@
 )Select Music Genre:
 Player must select music genre;
 
-)Type Player Name:
-Player must type his name or alias;
-
 ) Difficulty Selection:
 easy-btn click => select 10 seconds of audioplay;
 medium-btn click => select 5 seconds of audioplay;
@@ -14,7 +11,7 @@ extreme-btn click => select 1 seconds of audioplay;
 ) Play Random Song:
 Play Music => plays random music for (x)seconds;
 */
-
+//Add the specs
 
 
 // MUSIC DB
@@ -26,7 +23,20 @@ const musicDb = [
     './songs/Rock/Eagles - Hotel California.mp3',
     './songs/Rock/Metallica - Wherever I May Roam.mp3',
     './songs/Rock/Steppenwolf - Born To Be Wild.mp3',
-    './songs/Rock/The Doors - Break On Through.mp3'
+    './songs/Rock/The Doors - Break On Through.mp3',
+    './songs/Rock/Black Sabbath - Paranoid.mp3',
+    './songs/Rock/The Animals - The House Of The Rising Sun.mp3',
+    './songs/Rock/The Who - Baba ORiley.mp3',
+    './songs/Rock/Heart - Barracuda.mp3',
+    './songs/Rock/Survivor - Burning Heart.mp3',
+    './songs/Rock/Survivor - Eye Of The Tiger.mp3',
+    './songs/Rock/The Who - American Woman.mp3',
+    './songs/Rock/Nirvana - Heart-Shaped Box.mp3',
+    './songs/Rock/Guns N Roses - Paradise City.mp3',
+    './songs/Rock/Scorpions - Wind Of Change.mp3',
+    './songs/Rock/Eric Clapton - Cocaine.mp3',
+    './songs/Rock/Bon Jovi - Livin On A Prayer.mp3',
+    './songs/Rock/Guns N Roses - November Rain.mp3'
 ]
 
 
@@ -88,28 +98,24 @@ const playAudio = () => {
 const levelEasy = () => {
     difficulty = 'easy'
     console.log(difficulty)
-    div.innerHTML = '';
 }
 
 // Medium - Plays 5 seconds
 const levelMedium = () => {
     difficulty = 'medium'
     console.log(difficulty)
-    div.innerHTML = '';
 }
 
 // Hard - Plays 3 seconds
 const levelHard = () => {
     difficulty = 'hard'
     console.log(difficulty)
-    div.innerHTML = '';
 }
 
 // Extreme - Plays 1 second
 const levelExtreme = () => {
     difficulty = 'extreme'
     console.log(difficulty)
-    div.innerHTML = '';
 }
 
 
@@ -142,15 +148,13 @@ const selectMusic = () => {
         console.log(inputs[i].checked)
         if (inputs[i].checked && name === options[i].innerHTML) {
             winMsg.textContent = 'CONGRATULATIONS!';
-            winMsg.style.border = "1px solid red"
-            
-            console.log(winMsg);
+            winMsg.style.backgroundColor = "green"
             break;
         } else {
             winMsg.innerHTML = 'TRY AGAIN!'
+            winMsg.style.backgroundColor = "red"
         }
     }
     document.body.appendChild(winMsg);
+    options.map((div) => div.innerHTML = '')
 }
-
-
