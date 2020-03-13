@@ -161,18 +161,24 @@ span {
 
 #multiple-choice-btns {
     width: 400px;
+    margin-top: 20px;
 }
 
 .container {
     display: flex;
     flex-direction: row;
     vertical-align: center;
-    height: 80px;
-    border: 1px solid red;
+    align-items: center;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 15px;
 }
 
-input {
+.container input {
     align-content: center;
+    vertical-align: center;
+    position: relative;
+    margin-right: 10px;
 }
 
 .message {
@@ -184,4 +190,6 @@ input {
 
 #select-music-btn {
     width: 400px;
+    margin-top: 20px;
+    border-radius: 15px;
 }
