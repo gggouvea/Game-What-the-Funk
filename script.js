@@ -142,10 +142,8 @@ const selectMusic = () => {
     inputs = [...inputs];
     let options = document.querySelectorAll('input[name] + div');
     options = [...options];
-    console.log(options, ' ', inputs)
     let optionValue;
     for (let i = 0; i < options.length; i += 1) {
-        console.log(inputs[i].checked)
         if (inputs[i].checked && name === options[i].innerHTML) {
             winMsg.textContent = 'CONGRATULATIONS!';
             winMsg.style.backgroundColor = "green"
